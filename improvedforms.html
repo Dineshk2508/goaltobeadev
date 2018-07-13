@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Improved Forms</title>
+<link href="improvedforms.css" rel="stylesheet"/>
+<script type="text/javascript" src="../com_joemarini.js"></script>
+<script type="text/javascript" src="improvedforms.js"></script>
+</head>
+<body>
+<h1>Improved Form Interactivity</h1>
+<form id="form1" action="" method="post" name="form1" style="margin: 10 0 10 0">
+	<table border="0" cellspacing="3" width="547">
+		<tr valign="baseline">
+			<td align="right" style="width: 189px">
+			<span style="white-space:nowrap"><label id="subLabel" accesskey="s" class="required" for="subject">Message
+			Subject: <span class="RequiredMarker">*</span></label></span></td>
+			<td align="left" width="406">
+			<input id="subject" class="defaultFormItem" name="subject" size="40" style="width: 400px" type="text" /></td>
+		</tr>
+		<tr valign="baseline">
+			<td align="right" style="width: 189px">
+			<span style="white-space:nowrap"><label id="addrLabel" accesskey="a" class="required" for="address">Your 
+			Email Address: <span class="RequiredMarker">*</span> </label></span>
+			</td>
+			<td align="left">
+			<p>
+			<input id="address" class="defaultFormItem" name="address" size="40" style="width: 400px" type="text" />
+			<br />
+			</p>
+			</td>
+		</tr>
+		<tr valign="baseline">
+			<td align="right" valign="top" style="width: 189px">
+			<span style="white-space:nowrap"><label id="msgLabel" accesskey="m" class="required" for="message">Your
+			Message: <span class="RequiredMarker">*</span> </label></span></td>
+			<td align="left">
+			<textarea id="message" class="defaultFormItem" cols="40" name="message" rows="10" style="width: 400px"></textarea></td>
+		</tr>
+		<tr valign="top">
+			<td style="width: 189px">&nbsp;</td>
+			<td align="left">
+			<input name="Submit" style="width: 120px" type="submit" value="Send Message" />
+			<input name="Submit2" type="reset" value="Clear Fields and Start Over" />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Paged Table Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<style type="text/css">
+table { width: 100%; }
+table, td, th {
+	border: 1px solid #dddddd;
+}
+</style>
+<script type="text/javascript" src="../com_joemarini.js"></script>
+<script type="text/javascript" src="PagedTable.js"></script>
+<script type="text/javascript">
+var gThePagedTable = null;
+function createPagedTable(tableID, size)
+{
+    gThePagedTable = new PagedTable(document.getElementById(tableID), size);
+    com_joemarini.EVENTS.addEventHandler(document.getElementById('nextPage'), "click", nextPage, false);
+    com_joemarini.EVENTS.addEventHandler(document.getElementById('prevPage'), "click", prevPage, false);
+    com_joemarini.EVENTS.addEventHandler(document.getElementById('firstPage'), "click", firstPage, false);
+    com_joemarini.EVENTS.addEventHandler(document.getElementById('lastPage'), "click", lastPage, false);
+}
+function nextPage() { gThePagedTable.nextPage(); }
+function prevPage() { gThePagedTable.prevPage(); }
+function firstPage() { gThePagedTable.firstPage(); }
+function lastPage() { gThePagedTable.lastPage(); }
+
+com_joemarini.EVENTS.addEventHandler(window, "load", function() { createPagedTable('MSFTQuotes', 1000) }, false);
+</script>
+</head>
+<body>
+<a id="firstPage" href="#">first page</a>&nbsp;
+<a id="prevPage" href="#">prev page</a>&nbsp;
+<a id="nextPage" href="#">next page</a>&nbsp;
+<a id="lastPage" href="#">last page</a>&nbsp;
+<table id="MSFTQuotes">
+  <thead>
+    <tr>
+      <th colspan="7" align="center"><span class="TableTitle">Stock Activity for Aug 5, 2008 - Nov 5, 2008</span></th>
+    </tr>
+    <tr>
+      <th align="center" width="14%"><div align="right" class="style5">Date</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">Open</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">High</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">Low</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">Close</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">Volume</div></th>
+      <th class="yfnc_tablehead1" align="center" width="14%"><div align="right" class="style5">Adj Close</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td  align="right">5-Nov-08</td>
+      <td align="right">29.21</td>
+      <td align="right">29.36</td>
+      <td align="right">29.03</td>
+      <td align="right">29.31</td>
+      <td align="right">95,337,696</td>
+      <td align="right">29.31</td>
+    </tr>
+    <tr>
+      <td  align="right">4-Nov-08</td>
+      <td align="right">28.38</td>
+      <td align="right">29.00</td>
+      <td align="right">28.38</td>
+      <td align="right">29.00</td>
+      <td align="right">87,867,696</td>
+      <td align="right">29.00</td>
+    </tr>
+    <tr>
+      <td  align="right">3-Nov-08</td>
+      <td align="right">28.65</td>
+      <td align="right">28.65</td>
+      <td align="right">28.31</td>
+      <td align="right">28.47</td>
+      <td align="right">79,666,704</td>
+      <td align="right">28.47</td>
+    </tr>
+    <tr>
+      <td  align="right">25-Oct-08</td>
+      <td align="right">27.67</td>
+      <td align="right">27.77</td>
+      <td align="right">27.55</td>
+      <td align="right">27.63</td>
+      <td align="right">61,529,500</td>
+      <td align="right">27.63</td>
+    </tr>
+    <tr>
+      <td  align="right">22-Oct-08</td>
+      <td align="right">28.30</td>
+      <td align="right">28.34</td>
+      <td align="right">27.58</td>
+      <td align="right">27.74</td>
+      <td align="right">101,912,800</td>
+      <td align="right">27.74</td>
+    </tr>
+    <tr>
+      <td  align="right">21-Oct-08</td>
+      <td align="right">28.81</td>
+      <td align="right">28.89</td>
+      <td align="right">28.47</td>
+      <td align="right">28.56</td>
+      <td align="right">94,988,496</td>
+      <td align="right">28.56</td>
+    </tr>
+    <tr>
+      <td  align="right">20-Oct-08</td>
+      <td align="right">28.22</td>
+      <td align="right">28.75</td>
+      <td align="right">28.12</td>
+      <td align="right">28.70</td>
+      <td align="right">69,078,096</td>
+      <td align="right">28.70</td>
+    </tr>
+    <tr>
+      <td  align="right">19-Oct-08</td>
+      <td align="right">28.53</td>
+      <td align="right">28.59</td>
+      <td align="right">28.17</td>
+      <td align="right">28.18</td>
+      <td align="right">57,026,500</td>
+      <td align="right">28.18</td>
+    </tr>
+    <tr>
+      <td  align="right">18-Oct-08</td>
+      <td align="right">28.07</td>
+      <td align="right">28.45</td>
+      <td align="right">27.98</td>
+      <td align="right">28.41</td>
+      <td align="right">50,350,700</td>
+      <td align="right">28.41</td>
+    </tr>
+    <tr>
+      <td  align="right">15-Oct-08</td>
+      <td align="right">27.97</td>
+      <td align="right">28.24</td>
+      <td align="right">27.82</td>
+      <td align="right">27.99</td>
+      <td align="right">49,828,500</td>
+      <td align="right">27.99</td>
+    </tr>
+    <tr>
+      <td  align="right">14-Oct-08</td>
+      <td align="right">28.04</td>
+      <td align="right">28.16</td>
+      <td align="right">27.80</td>
+      <td align="right">27.80</td>
+      <td align="right">41,548,700</td>
+      <td align="right">27.80</td>
+    </tr>
+    <tr>
+      <td  align="right">13-Oct-08</td>
+      <td align="right">28.19</td>
+      <td align="right">28.27</td>
+      <td align="right">27.94</td>
+      <td align="right">28.03</td>
+      <td align="right">49,500,700</td>
+      <td align="right">28.03</td>
+    </tr>
+    <tr>
+      <td  align="right">12-Oct-08</td>
+      <td align="right">27.83</td>
+      <td align="right">28.16</td>
+      <td align="right">27.81</td>
+      <td align="right">28.03</td>
+      <td align="right">56,412,900</td>
+      <td align="right">28.03</td>
+    </tr>
+    <tr>
+      <td  align="right">11-Oct-08</td>
+      <td align="right">28.20</td>
+      <td align="right">28.22</td>
+      <td align="right">27.93</td>
+      <td align="right">28.06</td>
+      <td align="right">44,691,000</td>
+      <td align="right">28.06</td>
+    </tr>
+    <tr>
+      <td  align="right">8-Oct-08</td>
+      <td align="right">28.10</td>
+      <td align="right">28.33</td>
+      <td align="right">27.97</td>
+      <td align="right">27.99</td>
+      <td align="right">49,556,600</td>
+      <td align="right">27.99</td>
+    </tr>
+    <tr>
+      <td  align="right">7-Oct-08</td>
+      <td align="right">28.54</td>
+      <td align="right">28.59</td>
+      <td align="right">28.16</td>
+      <td align="right">28.17</td>
+      <td align="right">38,401,500</td>
+      <td align="right">28.17</td>
+    </tr>
+    <tr>
+      <td  align="right">6-Oct-08</td>
+      <td align="right">28.39</td>
+      <td align="right">28.55</td>
+      <td align="right">28.23</td>
+      <td align="right">28.53</td>
+      <td align="right">56,999,600</td>
+      <td align="right">28.53</td>
+    </tr>
+    <tr>
+      <td  align="right">5-Oct-08</td>
+      <td align="right">28.15</td>
+      <td align="right">28.45</td>
+      <td align="right">28.10</td>
+      <td align="right">28.38</td>
+      <td align="right">58,017,700</td>
+      <td align="right">28.38</td>
+    </tr>
+    <tr>
+      <td  align="right">4-Oct-08</td>
+      <td align="right">28.44</td>
+      <td align="right">28.46</td>
+      <td align="right">28.07</td>
+      <td align="right">28.12</td>
+      <td align="right">62,016,200</td>
+      <td align="right">28.12</td>
+    </tr>
+    <tr>
+      <td  align="right">1-Oct-08</td>
+      <td align="right">27.82</td>
+      <td align="right">28.32</td>
+      <td align="right">27.78</td>
+      <td align="right">28.25</td>
+      <td align="right">66,302,800</td>
+      <td align="right">28.25</td>
+    </tr>
+    <tr>
+      <td  align="right">30-Sep-08</td>
+      <td align="right">27.59</td>
+      <td align="right">27.79</td>
+      <td align="right">27.52</td>
+      <td align="right">27.65</td>
+      <td align="right">71,218,000</td>
+      <td align="right">27.65</td>
+    </tr>
+    <tr>
+      <td  align="right">29-Sep-08</td>
+      <td align="right">27.26</td>
+      <td align="right">27.69</td>
+      <td align="right">27.23</td>
+      <td align="right">27.58</td>
+      <td align="right">61,529,300</td>
+      <td align="right">27.58</td>
+    </tr>
+    <tr>
+      <td  align="right">28-Sep-08</td>
+      <td align="right">27.21</td>
+      <td align="right">27.36</td>
+      <td align="right">27.04</td>
+      <td align="right">27.27</td>
+      <td align="right">62,055,100</td>
+      <td align="right">27.27</td>
+    </tr>
+    <tr>
+      <td  align="right">27-Sep-08</td>
+      <td align="right">27.17</td>
+      <td align="right">27.32</td>
+      <td align="right">27.13</td>
+      <td align="right">27.19</td>
+      <td align="right">47,813,600</td>
+      <td align="right">27.19</td>
+    </tr>
+    <tr>
+      <td  align="right">24-Sep-08</td>
+      <td align="right">27.39</td>
+      <td align="right">27.46</td>
+      <td align="right">27.19</td>
+      <td align="right">27.29</td>
+      <td align="right">49,859,800</td>
+      <td align="right">27.29</td>
+    </tr>
+    <tr>
+      <td  align="right">23-Sep-08</td>
+      <td align="right">27.19</td>
+      <td align="right">27.39</td>
+      <td align="right">27.17</td>
+      <td align="right">27.35</td>
+      <td align="right">52,155,800</td>
+      <td align="right">27.35</td>
+    </tr>
+    <tr>
+      <td  align="right">22-Sep-08</td>
+      <td align="right">27.28</td>
+      <td align="right">27.74</td>
+      <td align="right">27.07</td>
+      <td align="right">27.12</td>
+      <td align="right">68,409,000</td>
+      <td align="right">27.12</td>
+    </tr>
+    <tr>
+      <td  align="right">21-Sep-08</td>
+      <td align="right">27.45</td>
+      <td align="right">27.53</td>
+      <td align="right">27.25</td>
+      <td align="right">27.26</td>
+      <td align="right">73,874,400</td>
+      <td align="right">27.26</td>
+    </tr>
+    <tr>
+      <td  align="right">20-Sep-08</td>
+      <td align="right">27.44</td>
+      <td align="right">27.65</td>
+      <td align="right">27.33</td>
+      <td align="right">27.51</td>
+      <td align="right">51,513,600</td>
+      <td align="right">27.51</td>
+    </tr>
+    <tr>
+      <td  align="right">17-Sep-08</td>
+      <td align="right">27.39</td>
+      <td align="right">27.53</td>
+      <td align="right">27.26</td>
+      <td align="right">27.51</td>
+      <td align="right">65,283,000</td>
+      <td align="right">27.51</td>
+    </tr>
+    <tr>
+      <td  align="right">16-Sep-08</td>
+      <td align="right">27.22</td>
+      <td align="right">27.35</td>
+      <td align="right">27.17</td>
+      <td align="right">27.26</td>
+      <td align="right">35,951,500</td>
+      <td align="right">27.26</td>
+    </tr>
+    <tr>
+      <td  align="right">15-Sep-08</td>
+      <td align="right">27.36</td>
+      <td align="right">27.40</td>
+      <td align="right">27.14</td>
+      <td align="right">27.19</td>
+      <td align="right">52,605,700</td>
+      <td align="right">27.19</td>
+    </tr>
+    <tr>
+      <td  align="right">14-Sep-08</td>
+      <td align="right">27.37</td>
+      <td align="right">27.51</td>
+      <td align="right">27.27</td>
+      <td align="right">27.44</td>
+      <td align="right">55,920,000</td>
+      <td align="right">27.44</td>
+    </tr>
+    <tr>
+      <td  align="right">13-Sep-08</td>
+      <td align="right">27.53</td>
+      <td align="right">27.57</td>
+      <td align="right">26.74</td>
+      <td align="right">27.25</td>
+      <td align="right">48,239,200</td>
+      <td align="right">27.25</td>
+    </tr>
+    <tr>
+      <td  align="right">10-Sep-08</td>
+      <td align="right">27.34</td>
+      <td align="right">27.51</td>
+      <td align="right">27.18</td>
+      <td align="right">27.49</td>
+      <td align="right">52,664,500</td>
+      <td align="right">27.49</td>
+    </tr>
+    <tr>
+      <td  align="right">9-Sep-08</td>
+      <td align="right">27.30</td>
+      <td align="right">27.47</td>
+      <td align="right">27.18</td>
+      <td align="right">27.28</td>
+      <td align="right">56,904,700</td>
+      <td align="right">27.28</td>
+    </tr>
+    <tr>
+      <td  align="right">8-Sep-08</td>
+      <td align="right">27.30</td>
+      <td align="right">27.47</td>
+      <td align="right">27.14</td>
+      <td align="right">27.26</td>
+      <td align="right">53,278,100</td>
+      <td align="right">27.26</td>
+    </tr>
+    <tr>
+      <td  align="right">7-Sep-08</td>
+      <td align="right">27.29</td>
+      <td align="right">27.38</td>
+      <td align="right">27.16</td>
+      <td align="right">27.36</td>
+      <td align="right">44,893,400</td>
+      <td align="right">27.36</td>
+    </tr>
+    <tr>
+      <td  align="right">3-Sep-08</td>
+      <td align="right">27.46</td>
+      <td align="right">27.62</td>
+      <td align="right">27.10</td>
+      <td align="right">27.11</td>
+      <td align="right">46,174,400</td>
+      <td align="right">27.11</td>
+    </tr>
+    <tr>
+      <td  align="right">2-Sep-08</td>
+      <td align="right">27.40</td>
+      <td align="right">27.68</td>
+      <td align="right">27.35</td>
+      <td align="right">27.62</td>
+      <td align="right">42,161,700</td>
+      <td align="right">27.62</td>
+    </tr>
+    <tr>
+      <td  align="right">1-Sep-08</td>
+      <td align="right">27.23</td>
+      <td align="right">27.52</td>
+      <td align="right">27.14</td>
+      <td align="right">27.39</td>
+      <td align="right">48,507,500</td>
+      <td align="right">27.39</td>
+    </tr>
+    <tr>
+      <td  align="right">31-Aug-08</td>
+      <td align="right">27.29</td>
+      <td align="right">27.32</td>
+      <td align="right">27.05</td>
+      <td align="right">27.30</td>
+      <td align="right">52,106,700</td>
+      <td align="right">27.30</td>
+    </tr>
+    <tr>
+      <td  align="right">30-Aug-08</td>
+      <td align="right">27.30</td>
+      <td align="right">27.39</td>
+      <td align="right">26.85</td>
+      <td align="right">27.30</td>
+      <td align="right">36,679,600</td>
+      <td align="right">27.30</td>
+    </tr>
+    <tr>
+      <td  align="right">27-Aug-08</td>
+      <td align="right">27.50</td>
+      <td align="right">27.65</td>
+      <td align="right">27.45</td>
+      <td align="right">27.46</td>
+      <td align="right">33,248,700</td>
+      <td align="right">27.46</td>
+    </tr>
+    <tr>
+      <td  align="right">26-Aug-08</td>
+      <td align="right">27.46</td>
+      <td align="right">27.60</td>
+      <td align="right">27.39</td>
+      <td align="right">27.44</td>
+      <td align="right">35,465,500</td>
+      <td align="right">27.44</td>
+    </tr>
+    <tr>
+      <td  align="right">25-Aug-08</td>
+      <td align="right">27.21</td>
+      <td align="right">27.67</td>
+      <td align="right">27.18</td>
+      <td align="right">27.55</td>
+      <td align="right">53,512,700</td>
+      <td align="right">27.55</td>
+    </tr>
+    <tr>
+      <td  align="right">24-Aug-08</td>
+      <td align="right">27.40</td>
+      <td align="right">27.46</td>
+      <td align="right">27.09</td>
+      <td align="right">27.24</td>
+      <td align="right">40,835,300</td>
+      <td align="right">27.24</td>
+    </tr>
+    <tr>
+      <td  align="right">23-Aug-08</td>
+      <td align="right">27.27</td>
+      <td align="right">27.33</td>
+      <td align="right">27.12</td>
+      <td align="right">27.24</td>
+      <td align="right">39,572,200</td>
+      <td align="right">27.24</td>
+    </tr>
+    <tr>
+      <td  align="right">23-Aug-08</td>
+      <td align="center" colspan="6"> $ 0.08 Cash Dividend</td>
+    </tr>
+    <tr>
+      <td  align="right">20-Aug-08</td>
+      <td align="right">27.13</td>
+      <td align="right">27.37</td>
+      <td align="right">27.04</td>
+      <td align="right">27.20</td>
+      <td align="right">46,494,800</td>
+      <td align="right">27.12</td>
+    </tr>
+    <tr>
+      <td  align="right">19-Aug-08</td>
+      <td align="right">27.35</td>
+      <td align="right">27.45</td>
+      <td align="right">27.01</td>
+      <td align="right">27.12</td>
+      <td align="right">46,293,000</td>
+      <td align="right">27.04</td>
+    </tr>
+    <tr>
+      <td  align="right">18-Aug-08</td>
+      <td align="right">26.93</td>
+      <td align="right">27.50</td>
+      <td align="right">26.89</td>
+      <td align="right">27.46</td>
+      <td align="right">58,844,000</td>
+      <td align="right">27.38</td>
+    </tr>
+    <tr>
+      <td  align="right">17-Aug-08</td>
+      <td align="right">27.22</td>
+      <td align="right">27.38</td>
+      <td align="right">26.98</td>
+      <td align="right">27.05</td>
+      <td align="right">56,879,700</td>
+      <td align="right">26.97</td>
+    </tr>
+    <tr>
+      <td  align="right">16-Aug-08</td>
+      <td align="right">27.03</td>
+      <td align="right">27.20</td>
+      <td align="right">26.96</td>
+      <td align="right">27.09</td>
+      <td align="right">54,347,200</td>
+      <td align="right">27.01</td>
+    </tr>
+    <tr>
+      <td  align="right">13-Aug-08</td>
+      <td align="right">27.01</td>
+      <td align="right">27.25</td>
+      <td align="right">26.98</td>
+      <td align="right">27.02</td>
+      <td align="right">43,333,200</td>
+      <td align="right">26.94</td>
+    </tr>
+    <tr>
+      <td  align="right">12-Aug-08</td>
+      <td align="right">27.23</td>
+      <td align="right">27.31</td>
+      <td align="right">26.86</td>
+      <td align="right">26.88</td>
+      <td align="right">50,279,700</td>
+      <td align="right">26.80</td>
+    </tr>
+    <tr>
+      <td  align="right">11-Aug-08</td>
+      <td align="right">27.39</td>
+      <td align="right">27.51</td>
+      <td align="right">27.20</td>
+      <td align="right">27.41</td>
+      <td align="right">53,097,300</td>
+      <td align="right">27.33</td>
+    </tr>
+    <tr>
+      <td  align="right">10-Aug-08</td>
+      <td align="right">27.30</td>
+      <td align="right">27.75</td>
+      <td align="right">27.25</td>
+      <td align="right">27.72</td>
+      <td align="right">57,632,700</td>
+      <td align="right">27.64</td>
+    </tr>
+    <tr>
+      <td  align="right">9-Aug-08</td>
+      <td align="right">27.26</td>
+      <td align="right">27.28</td>
+      <td align="right">27.10</td>
+      <td align="right">27.18</td>
+      <td align="right">51,877,500</td>
+      <td align="right">27.10</td>
+    </tr>
+    <tr>
+      <td  align="right">6-Aug-08</td>
+      <td align="right">27.38</td>
+      <td align="right">27.86</td>
+      <td align="right">27.06</td>
+      <td align="right">27.14</td>
+      <td align="right">75,628,000</td>
+      <td align="right">27.06</td>
+    </tr>
+    <tr>
+      <td  align="right">5-Aug-08</td>
+      <td align="right">28.16</td>
+      <td align="right">28.21</td>
+      <td align="right">27.52</td>
+      <td align="right">27.53</td>
+      <td align="right">55,591,700</td>
+      <td align="right">27.45</td>
+    </tr>
+  </tbody>
+</table></body>
+</html>

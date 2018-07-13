@@ -1,0 +1,27 @@
+﻿.RequiredMarker {
+	color: #FF0000;
+	font-size: 1.2em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td {
+	white-space:nowrap
+}
+.defaultFormItem {
+	border:2px solid #cbcbcb;
+}
+
+label {
+	cursor: pointer;
+	cursor: hand;
+}
+label.required {
+	font-weight: bold;
+}
+label.validated {
+	font-weight: bold;
+	color:black;
+}
+label.invalid {
+	font-weight: bold;
+	color:red;
+}

@@ -1,0 +1,8 @@
+﻿tr.stripe1 { background-color:#eee; }
+tr.stripe2 { background-color:#ccc; }
+.style5 { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }
+.TableTitle { font-size: 24px }
+table { width:100% }
+table, td, th {
+	border: 1px solid #dddddd;
+}
