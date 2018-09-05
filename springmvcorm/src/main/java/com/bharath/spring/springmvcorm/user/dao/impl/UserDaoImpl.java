@@ -40,4 +40,13 @@ public class UserDaoImpl implements UserDao {
 		return hibernateTemplate.get(User.class, id);
 	}
 
-}
+	@Override
+	public int UpdateUsers(List<User> user) {
+				
+		return 0;
+	}
+
+
+	}
+
+

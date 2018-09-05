@@ -2,8 +2,13 @@ package com.bharath.spring.springmvcorm.user.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +21,9 @@ import com.bharath.spring.springmvcorm.user.services.UserService;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+	private HibernateTemplate hibernateTemplate;
 
 	@Autowired
 	private UserService service;
@@ -40,6 +48,32 @@ public class UserController {
 		return "displayUsers";
 	}
 
+	@Transactional
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String updateUser(HttpServletRequest request,HttpServletResponse response) {
+		String action=request.getParameter("action");
+		if(action.equalsIgnoreCase("update")) {
+			
+			String[] ids=request.getParameterValues("id");
+			String[] name=request.getParameterValues("name");
+			String[] email=request.getParameterValues("email");
+			
+			for(int i=0; i<ids.length ; i++ ) {
+				
+				User user=hibernateTemplate.get(User.class,Integer.valueOf(ids[i]));
+				user.setName(name[i]);
+				user.setEmail(email[i]);
+				hibernateTemplate.save(user);	
+				
+			}
+					
+		}
+		
+		 return "redirect:" + "getUsers";
+	}
+	
+	
+	
 	@RequestMapping("validateEmail")
 	public @ResponseBody String validateEmail(@RequestParam("id") int id) {
 		User user = service.getUser(id);

@@ -42,4 +42,10 @@ public class UserServiceImpl implements UserService {
 	public User getUser(Integer id) {
 		return dao.findUser(id);
 	}
+
+	@Override
+	public int updateUser(List<User> user) {
+		// TODO Auto-generated method stub
+		return dao.UpdateUsers(user);
+	}
 }

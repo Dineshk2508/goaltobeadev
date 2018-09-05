@@ -11,4 +11,6 @@ public interface UserDao {
 	List<User> findUsers();
 	
 	User findUser(Integer id);
+	
+	int UpdateUsers(List<User> user);
 }
