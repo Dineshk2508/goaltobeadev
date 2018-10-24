@@ -1,0 +1,5 @@
+pr01/kitkat/100/10
+pr02/fivestar/200/20
+pr03/mango/300/20
+pr04/biscuit/150/25
+pr05/soap/220/20
